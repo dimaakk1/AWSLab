@@ -7,11 +7,11 @@ phases:
 
   pre_build:
     commands:
-      - dotnet restore AWSCodePipelineDemo/AWSCodePipelineDemo.csproj
+      - dotnet restore AWS/AWS.csproj
 
   build:
     commands:
-      - dotnet build AWSCodePipelineDemo/AWSCodePipelineDemo.csproj
+      - dotnet build AWS/AWS.csproj
 
   post_build:
     commands:
