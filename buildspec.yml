@@ -1,22 +1,18 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
       dotnet: 8.0
-
   pre_build:
     commands:
       - dotnet restore AWS/AWS.csproj
-
   build:
     commands:
-      - dotnet build AWS/AWS.csproj
-
+      - dotnet build AWS/AWS.csproj --configuration Release
   post_build:
     commands:
-      - dotnet publish -c Release -o ./app/
-
+      - dotnet publish AWS/AWS.csproj -c Release -o ./app/
 artifacts:
   files:
     - '**/*'
+  base-directory: app
