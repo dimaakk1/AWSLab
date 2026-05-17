@@ -11,11 +11,11 @@ phases:
 
   build:
     commands:
-      - dotnet build AWS/AWS.csproj
+      - dotnet build AWS/AWS.csproj -c Release
 
   post_build:
     commands:
-      - dotnet publish -c Release -o ./app/
+      - dotnet publish AWS/AWS.csproj -c Release -o publish
 
 artifacts:
   files:
